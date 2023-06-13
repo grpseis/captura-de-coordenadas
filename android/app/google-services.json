@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "835003194895",
+    "project_id": "captura-de-coordenadas",
+    "storage_bucket": "captura-de-coordenadas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835003194895:android:a76879f4525f8275fecd7a",
+        "android_client_info": {
+          "package_name": "com.example.coordenadas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835003194895-ev6hp59rpc8t2e7ucrj2lr713fc1t75t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwMgFZZvBjFqeWnxQ4DnL95cXG8HmC5oQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835003194895-ev6hp59rpc8t2e7ucrj2lr713fc1t75t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
