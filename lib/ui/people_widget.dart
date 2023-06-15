@@ -7,6 +7,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../model/people.dart';
 
+
+
+
 class PeopleWidget extends StatefulWidget {
   const PeopleWidget({Key? key}) : super(key: key);
 
@@ -24,6 +27,21 @@ class _PeopleWidgetState extends State<PeopleWidget> {
 
   late String lat = '0';
   late String long = '0';
+
+  // Método para abrir google maps
+  static Future<void> navigateTo(double lat, double lng) async {
+    String url = '';
+    String urlAppleMaps = '';
+
+      url = 'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url));
+      } else {
+        throw 'Could not launch $url';
+      }
+
+  }
+
 
   // Metodo para iniciar la instancia de los listeners
   @override
@@ -52,13 +70,9 @@ class _PeopleWidgetState extends State<PeopleWidget> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        subtitle: Text("${msg.latitude}, ${msg.longitude}"),
+        subtitle: Text("Laitud: ${msg.latitude}, Longitud: ${msg.longitude}"),
         onTap: () async {
-          String googleUrl =
-              'https://www.google.com/maps/search/?api=1&query=${msg.latitude},${msg.longitude}';
-          if (await canLaunch(googleUrl)) {
-            await launch(googleUrl);
-          }
+          navigateTo(double.parse(msg.latitude), double.parse(msg.longitude));
         },
       ),
     );
